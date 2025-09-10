@@ -1,0 +1,127 @@
+:root {
+    --bg: #0f172a;
+    --fg: #e2e8f0;
+    --accent: #38bdf8;
+    --duration: 12s;
+    --gap: 0.5rem;
+}
+
+.ticker {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    padding: 0.5rem 0;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ticker__label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 0.35rem 0.6rem;
+    border-radius: 0.6rem;
+    white-space: nowrap;
+}
+
+.ticker__viewport {
+    position: relative;
+    height: 1.7em;
+    overflow: hidden;
+    perspective: 800px;
+    flex: 1;
+}
+
+.ticker__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ticker__item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: 50% 100%;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+    --slice: calc(var(--duration) / var(--count));
+    animation: flipUp var(--duration) linear infinite both;
+    animation-delay: calc(var(--i) * var(--slice));
+}
+
+.ticker:hover .ticker__item {
+    animation-play-state: paused;
+}
+
+.ticker__item a {
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center;
+}
+
+.ticker__item a:hover {
+    text-decoration: underline;
+}
+
+@keyframes flipUp {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg) translateY(0);
+    }
+
+    5% {
+        opacity: 1;
+        transform: rotateX(0deg) translateY(0);
+    }
+
+    15% {
+        opacity: 1;
+        transform: rotateX(0deg) translateY(0);
+    }
+
+    20% {
+        opacity: 0;
+        transform: rotateX(-90deg) translateY(0);
+    }
+
+    21%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticker__item {
+        animation: none !important;
+    }
+
+    .ticker__item:not(:first-child) {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .ticker__viewport {
+        height: 1.2em;
+    }
+
+    .ticker__item {
+        justify-content: center;
+    }
+
+    .ticker__item a {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}
