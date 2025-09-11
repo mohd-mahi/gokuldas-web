@@ -4,7 +4,7 @@ import Feature from "../components/Feature";
 import Explore from "../components/Explore";
 import Banner from "../components/Banner";
 import Testimonial from "../components/Testimonial";
-import News from "../components/News";
+// import News from "../components/News";
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <Explore />
       <Banner />
       <Testimonial />
-      <News />
+      {/* <News /> */}
     </>
   );
 };

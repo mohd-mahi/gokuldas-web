@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Heading from "../../components/ui/Heading";
 import Feature from "../../components/Feature";
 import { Link, useParams } from "react-router";
 import products from "../../components/data/accordionData";
+import { Fancybox } from "@fancyapps/ui";
 
 const OurProduct = () => {
+  useEffect(() => {
+    Fancybox.bind("[data-fancybox]", {
+      Thumbs: false,
+      Toolbar: {
+        display: ["zoom", "fullscreen", "close"],
+      },
+      closeButton: "inside",
+      dragToClose: true,
+      animated: true,
+      infinite: false,
+    });
+
+    return () => {
+      Fancybox.destroy();
+    };
+  }, []);
   const { slug } = useParams();
 
   // Find the category by slug
@@ -59,7 +76,15 @@ const OurProduct = () => {
                   {category.items.map((item, idx) => (
                     <tr key={idx}>
                       <td className="td">
-                        {item.url && <img src={item.url} alt={item.name} />}
+                        {item.url && (
+                          <a
+                            href={item.url}
+                            data-fancybox={`img-${idx}-${idx}`}
+                            data-caption={item.name}
+                          >
+                            <img src={item.url} alt={item.name} />{" "}
+                          </a>
+                        )}
                         <span>
                           {item.name}
                           <p> {item.description}</p>
@@ -73,7 +98,7 @@ const OurProduct = () => {
                 </tbody>
               </table>
               <div className="btn-container">
-                <Link to="?">
+                <Link to="?" className="btnn">
                   Download <span>Shipping Rates Card</span>
                 </Link>
               </div>

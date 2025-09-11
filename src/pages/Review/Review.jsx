@@ -1,7 +1,5 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Pagination } from "swiper/modules";
 import { faFaceSmile } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Heading from "../../components/ui/Heading";
@@ -15,25 +13,9 @@ const Review = () => {
         <div className="fix-container">
           <Heading title="What They Say" heading="Our Happy Costomers" />
           <div className="testi-wrappper">
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={10}
-              pagination={{
-                clickable: true,
-              }}
-              breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 3,
-                },
-              }}
-              modules={[Pagination]}
-              className="mySwiper"
-            >
+            <div className="row g-2">
               {testiData.map((item, index) => (
-                <SwiperSlide key={index}>
+                <div className="col-lg-4 col-md-6" key={index}>
                   <div
                     className="testi-card"
                     data-aos="fade-up"
@@ -63,9 +45,9 @@ const Review = () => {
                       <h3>{item.name}</h3>
                     </div>
                   </div>
-                </SwiperSlide>
+                </div>
               ))}
-            </Swiper>
+            </div>
           </div>
         </div>
       </section>

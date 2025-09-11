@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router";
 import { StrictMode } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.css";
 import "swiper/css";

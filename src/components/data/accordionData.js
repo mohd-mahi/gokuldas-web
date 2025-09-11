@@ -996,7 +996,7 @@ const products = [
   },
   {
     id: 17,
-    title: "KELA WAFERS (BANANA)",
+    title: "KELA WAFERS ",
     img: "/images/gathia.jpg",
     items: [
       {

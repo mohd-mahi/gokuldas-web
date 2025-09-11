@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import Aos from "aos";
 import Loader from "./components/loader/Loader";
 import LoaderContext from "./context/LoaderContext";
+import PageNotFound from "./components/PageNotFound";
 
 const Header = lazy(() => import("./layouts/header/Header"));
 const Footer = lazy(() => import("./layouts/footer/Footer"));
@@ -11,6 +12,7 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About/About"));
 const OurProduct = lazy(() => import("./pages/Products/OurProduct"));
 const Review = lazy(() => import("./pages/Review/Review"));
+const ContactUS = lazy(() => import("./pages/ContactUS/ContactUS"));
 
 function App() {
   const lenisRef = useRef();
@@ -64,7 +66,8 @@ function App() {
         <Route path="/about-us" element={<About />} />
         <Route path="/products/:slug" element={<OurProduct />} />
         <Route path="/review" element={<Review />} />
-        {/* <Route path="*" element={<PageNotFound/>} /> */}
+        <Route path="*" element={<PageNotFound />} />
+        <Route path="/contact-us" element={<ContactUS />} />
       </Routes>
       <Footer />
     </Suspense>

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Heading from "./ui/Heading";
 import products from "./data/accordionData";
+import { Fancybox } from "@fancyapps/ui";
 
 const Explore = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -8,6 +9,22 @@ const Explore = () => {
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+  useEffect(() => {
+    Fancybox.bind("[data-fancybox]", {
+      Thumbs: false,
+      Toolbar: {
+        display: ["zoom", "fullscreen", "close"],
+      },
+      closeButton: "inside",
+      dragToClose: true,
+      animated: true,
+      infinite: false,
+    });
+
+    return () => {
+      Fancybox.destroy();
+    };
+  }, []);
 
   return (
     <section className="explore-section section-padding">
@@ -43,7 +60,7 @@ const Explore = () => {
                       aria-expanded={isOpen}
                       onClick={() => toggleAccordion(index)}
                     >
-                      <img src={item.img} alt={item.title} />
+                      {/* <img src={item.img} alt={item.title} /> */}
                       {item.title}
                     </button>
                   </h2>
@@ -89,7 +106,25 @@ const Explore = () => {
                             ];
                             return (
                               <tr key={i}>
-                                <td>{row.name}</td>
+                                <td className="td">
+                                  {row.url && (
+                                    <a
+                                      href={row.url}
+                                      data-fancybox={`img-${index}-${i}`}
+                                      data-caption={row.name}
+                                    >
+                                      <img
+                                        src={row.url}
+                                        alt={row.name}
+                                        style={{
+                                          cursor: "pointer",
+                                          maxWidth: "80px",
+                                        }}
+                                      />
+                                    </a>
+                                  )}
+                                  {row.name}
+                                </td>
                                 {keys.map((key) => (
                                   <td key={key}>{row[key] ?? "-"}</td>
                                 ))}
