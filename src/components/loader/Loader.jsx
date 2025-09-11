@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
-import LoaderContext from "../../context/LoaderContext";
+import React from "react";
 
-const Loader = () => {
-  const { mounted } = useContext(LoaderContext);
+const Loader = ({ isLoading }) => {
 
   return (
-    <div className={`loader-wrapper ${!mounted ? "active" : ""}`}>
+    <div className={`loader-wrapper ${isLoading ? "active" : ""}`}>
       <div className="loader">
         <img src="/images/logo (2).png" alt="" />
       </div>

@@ -1,38 +1,33 @@
 import React, { useEffect, useRef, useState } from "react";
 import LoaderContext from "./LoaderContext";
 import { useLocation } from "react-router";
+import imagesLoaded from "imagesloaded";
 
 const LoaderProvider = ({ children }) => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [loaderExit, setLoaderExit] = useState(null);
-    const [mounted, setMounted] = useState(false);
-
     const location = useLocation();
 
-    const isFirstLoad = useRef(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isMounted, setMounted] = useState(false);
+    const isFirstLoading = useRef(true);
+    const [isAssetsLoaded, setIsAssetsLoaded] = useState(false);
+
+    const waitForResources = async () => {
+        try {
+            if (document.fonts?.ready) await document.fonts.ready;
+
+            await new Promise((resolve) => {
+                imagesLoaded(document.body, { background: true }, () => {
+                    resolve();
+                });
+            });
+        } catch (err) {
+            console.warn("Resource wait failed:", err);
+        }
+    };
 
     useEffect(() => {
-        const waitForImages = async () => {
-            const images = Array.from(document.images).filter(
-                (img) => img.loading !== "lazy"
-            );
-            await Promise.all(
-                images.map((img) =>
-                    img.complete
-                        ? img.decode?.().catch(() => { })
-                        : new Promise((resolve) => {
-                            img.addEventListener("load", () =>
-                                img.decode?.().then(resolve).catch(resolve)
-                            );
-                            img.addEventListener("error", resolve);
-                        })
-                )
-            );
-        };
-
         const handleLoadComplete = () => {
             setIsLoading(false);
-            setLoaderExit(true);
 
             requestAnimationFrame(() => {
                 if (window.lenis?.scrollTo) {
@@ -41,48 +36,58 @@ const LoaderProvider = ({ children }) => {
                     window.scrollTo(0, 0);
                 }
             });
-
-            setTimeout(() => {
-                setLoaderExit(false);
-            }, 3000);
-
+            isFirstLoading.current = false;
             setTimeout(() => {
                 setMounted(true);
-                isFirstLoad.current = false;
-            }, 2000);
+            }, 400);
         };
 
-        const waitForResources = async () => {
-            if (document.fonts?.ready) await document.fonts.ready;
-            await waitForImages();
-
+        const startLoading = async () => {
+            await waitForResources();
             if (document.readyState === "complete") {
                 handleLoadComplete();
             } else {
-                window.addEventListener("load", handleLoadComplete);
+                window.addEventListener("load", handleLoadComplete, { once: true });
             }
         };
 
-        waitForResources();
+        startLoading();
 
         return () => {
             window.removeEventListener("load", handleLoadComplete);
         };
+
     }, []);
 
     useEffect(() => {
-        if (!isFirstLoad.current) {
-            setMounted(false);
-            const timeout = setTimeout(() => {
-                setMounted(true);
-            }, 2500);
-            return () => clearTimeout(timeout);
-        }
+        if (isFirstLoading.current) return;
+        setMounted(false);
+        setIsAssetsLoaded(false);
+
+        const completeLoading = async () => {
+            await waitForResources();
+            setIsAssetsLoaded(true);
+            setMounted(true);
+        };
+
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                completeLoading();
+            }, 100);
+        });
+
     }, [location.pathname]);
 
-
     return (
-        <LoaderContext.Provider value={{ isLoading, loaderExit, mounted }}>
+        <LoaderContext.Provider
+            value={{
+                isLoading,
+                isMounted,
+                setMounted,
+                isAssetsLoaded,
+                isFirstLoading,
+            }}
+        >
             {children}
         </LoaderContext.Provider>
     );

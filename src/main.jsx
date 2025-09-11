@@ -13,13 +13,19 @@ import "slick-carousel/slick/slick-theme.css";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "./index.css";
 import LoaderProvider from "./context/LoaderProvider";
+import FormLoaderProvider from "./context/FormLoader/FormLoaderProvider";
+import ToastProvider from "./context/Toast/ToastProvider";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <LoaderProvider>
-        <App />
+        <FormLoaderProvider>
+          <ToastProvider>
+            <App />
+          </ToastProvider>
+        </FormLoaderProvider>
       </LoaderProvider>
     </BrowserRouter>
   </StrictMode>
