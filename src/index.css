@@ -1296,7 +1296,11 @@ form.form-ctnr input,
 
 }
 
-.f-panzoom__viewport {
+html.with-fancybox {
+    overflow: hidden !important;
+}
+
+.f-panzoom__content .f-panzoom__viewport {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
@@ -1306,7 +1310,7 @@ form.form-ctnr input,
     align-items: center !important;
 }
 
-.f-panzoom__content {
+.f-panzoom__content .f-panzoom__content {
     width: 100% !important;
     height: auto !important;
     max-width: 100% !important;
