@@ -24,10 +24,8 @@ const Explore = () => {
       },
     });
 
-    return () => {
-      Fancybox.destroy();
-    };
-  }, []);
+    return () => Fancybox.destroy();
+  }, [category]);
 
   return (
     <section className="explore-section section-padding">

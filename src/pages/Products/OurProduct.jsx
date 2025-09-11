@@ -14,11 +14,8 @@ const OurProduct = () => {
         fit: "contain", // ✅ ensures the image fits in viewport
       },
     });
-
-    return () => {
-      Fancybox.destroy();
-    };
-  }, []);
+    return () => Fancybox.destroy();
+  }, [category]);
   const { slug } = useParams();
 
   // Find the category by slug
