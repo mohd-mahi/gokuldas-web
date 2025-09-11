@@ -3,11 +3,10 @@ import "./topHeader.css";
 
 export default function NewsTicker() {
   const items = [
-    "Govt unveils new digital health initiative nationwide.",
-    "Markets open higher as tech stocks rally in early trade.",
-    "Monsoon intensifies; IMD issues heavy rain advisory.",
-    "ISRO announces date for next commercial satellite launch.",
-    "Fuel prices stable across metros for third straight day.",
+    "World Wide Shipping Available | For Order WhatsApp or Call (+91) 90292 91221 | PAN India Delivery Available",
+    "World Wide Shipping Available | For Order WhatsApp or Call (+91) 90292 91221 | PAN India Delivery Available",
+    "World Wide Shipping Available | For Order WhatsApp or Call (+91) 90292 91221 | PAN India Delivery Available",
+    "World Wide Shipping Available | For Order WhatsApp or Call (+91) 90292 91221 | PAN India Delivery Available",
   ];
 
   const listRef = useRef(null);
@@ -20,14 +19,22 @@ export default function NewsTicker() {
 
   return (
     <div className="ticker" aria-label="News Ticker">
-      {/* <span className="ticker__label">News</span> */}
-
       <div className="container">
         <div className="ticker__viewport">
           <ul className="ticker__list" ref={listRef}>
             {items.map((text, i) => (
-              <li className="ticker__item" key={i} style={{ ["--i"]: i }}>
-                <a href="#">{text}</a>
+              <li className="ticker__item" key={i} style={{ "--i": i }}>
+                <p>
+                  {text.includes("Call") ? (
+                    <>
+                      World Wide Shipping Available | For Order WhatsApp or Call{" "}
+                      <a href="tel:+919029291221">(+91) 90292 91221</a> | PAN
+                      India Delivery Available
+                    </>
+                  ) : (
+                    text
+                  )}
+                </p>
               </li>
             ))}
           </ul>

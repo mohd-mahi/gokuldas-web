@@ -60,14 +60,20 @@
     animation-play-state: paused;
 }
 
-.ticker__item a {
-    color: var(--fg);
-    text-decoration: none;
+.ticker__item p {
+    color: #fff;
     font-size: 0.8rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     align-items: center;
+}
+
+.ticker__item a {
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 0.8rem;
+
 }
 
 .ticker__item a:hover {
@@ -120,7 +126,8 @@
         justify-content: center;
     }
 
-    .ticker__item a {
+    .ticker__item a,
+    .ticker__item p {
         font-size: 0.7rem;
         text-align: center;
     }

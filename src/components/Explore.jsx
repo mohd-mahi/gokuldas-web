@@ -34,7 +34,12 @@ const Explore = () => {
       <div className="container">
         <div className="local-container">
           <Heading title="Pick Your Taste" heading="Explore Snacks" />
-          <div className="accordion" id="accordionExample">
+          <div
+            className="accordion"
+            id="accordionExample"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             {products.map((item, index) => {
               const isOpen = activeIndex === index;
               const contentRef = useRef(null);
@@ -48,12 +53,7 @@ const Explore = () => {
               }, [isOpen]);
 
               return (
-                <div
-                  className="accordion-item"
-                  key={item.id}
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
+                <div className="accordion-item" key={item.id}>
                   <h2 className="accordion-header">
                     <button
                       className={`accordion-button ${

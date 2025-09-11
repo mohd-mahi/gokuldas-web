@@ -6,19 +6,16 @@ const Feature = ({ cl }) => {
       id: 1,
       img: "/images/home/fresh.png",
       text: "MADE FRESH DAILY",
-      delay: "200",
     },
     {
       id: 2,
       img: "/images/home/shop.png",
       text: "NO MINIMUM ORDERS",
-      delay: "300",
     },
     {
       id: 3,
       img: "/images/home/rating.png",
       text: "SATISFACTION GUARANTEED",
-      delay: "400",
     },
   ];
 
@@ -36,11 +33,7 @@ const Feature = ({ cl }) => {
           <div className="row g-2 d-lg-flex d-none">
             {featuresData.map((item, index) => (
               <div className="col-md-4 col-sm-6" key={index}>
-                <div
-                  className="fea-card"
-                  data-aos="fade-up"
-                  data-aos-delay={item.delay}
-                >
+                <div className="fea-card">
                   <div className="fea-content">
                     <img src={item.img} alt="" />
                     <h6 className="fea-title">{item.text}</h6>
