@@ -1296,6 +1296,24 @@ form.form-ctnr input,
 
 }
 
+.f-panzoom__viewport {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.f-panzoom__content {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain;
+}
+
+
 @media (max-width:1199.98px) {
     .hero-section .local-container {
         padding-inline: 30px;
@@ -1573,24 +1591,6 @@ form.form-ctnr input,
         width: 30px;
     }
 
-    .f-panzoom__viewport {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-        transform: none !important;
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-    }
-
-    .f-panzoom__content {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-        object-fit: contain;
-    }
 }
 
 @media (max-width:767.98px) {
