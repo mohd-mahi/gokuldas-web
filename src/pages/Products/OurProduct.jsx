@@ -9,13 +9,10 @@ const OurProduct = () => {
   useEffect(() => {
     Fancybox.bind("[data-fancybox]", {
       Thumbs: false,
-      // Toolbar: {
-      //   display: ["zoom", "fullscreen", "close"],
-      // },
-      // closeButton: "inside",
-      // dragToClose: true,
-      // animated: true,
-      // infinite: false,
+      //
+      Image: {
+        fit: "contain", // ✅ ensures the image fits in viewport
+      },
     });
 
     return () => {

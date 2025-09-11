@@ -19,6 +19,9 @@ const Explore = () => {
       // dragToClose: true,
       // animated: true,
       // infinite: false,
+      Image: {
+        fit: "contain", // ✅ ensures the image fits in viewport
+      },
     });
 
     return () => {
