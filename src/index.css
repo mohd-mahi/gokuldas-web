@@ -1727,6 +1727,7 @@ form.form-ctnr input,
 
     form.form-ctnr {
         gap: 10px;
+        padding: 20px 0;
     }
 
     .contact-form input::placeholder,

@@ -9,13 +9,13 @@ const OurProduct = () => {
   useEffect(() => {
     Fancybox.bind("[data-fancybox]", {
       Thumbs: false,
-      Toolbar: {
-        display: ["zoom", "fullscreen", "close"],
-      },
-      closeButton: "inside",
-      dragToClose: true,
-      animated: true,
-      infinite: false,
+      // Toolbar: {
+      //   display: ["zoom", "fullscreen", "close"],
+      // },
+      // closeButton: "inside",
+      // dragToClose: true,
+      // animated: true,
+      // infinite: false,
     });
 
     return () => {
@@ -82,7 +82,7 @@ const OurProduct = () => {
                             data-fancybox={`img-${idx}-${idx}`}
                             data-caption={item.name}
                           >
-                            <img src={item.url} alt={item.name} />{" "}
+                            <img src={item.url} alt={item.name} />
                           </a>
                         )}
                         <span>

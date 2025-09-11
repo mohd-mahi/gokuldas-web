@@ -12,13 +12,13 @@ const Explore = () => {
   useEffect(() => {
     Fancybox.bind("[data-fancybox]", {
       Thumbs: false,
-      Toolbar: {
-        display: ["zoom", "fullscreen", "close"],
-      },
-      closeButton: "inside",
-      dragToClose: true,
-      animated: true,
-      infinite: false,
+      // Toolbar: {
+      //   display: ["zoom", "fullscreen", "close"],
+      // },
+      // closeButton: "inside",
+      // dragToClose: true,
+      // animated: true,
+      // infinite: false,
     });
 
     return () => {
