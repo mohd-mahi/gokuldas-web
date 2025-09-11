@@ -64,9 +64,10 @@ const ContactUS = () => {
                   <input type="text" placeholder="Full Name" />
                   <input type="email" placeholder="Email Address" />
                   <div className="input-mobile-nmbr">
+                    <img src="/images/india.png" alt="" />
                     <input type="tel" placeholder="Mobile Number" />
                   </div>
-                  <textarea placeholder="Your Message" rows="4"></textarea>
+                  <textarea placeholder="Your Message" rows="5"></textarea>
                   <div className="btn-container">
                     <button className="btnn">Submit Inquiry</button>
                   </div>

@@ -129,7 +129,7 @@ h4 {
 
 .btn-container .btnn {
     display: inline-block;
-    background: red;
+    background: var(--primary-color);
     text-align: center;
     padding: 8px 20px;
     color: #fff;
@@ -140,6 +140,12 @@ h4 {
     max-width: 220px;
     width: 100%;
     text-transform: uppercase;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+}
+
+.btn-container .btnn:hover {
+    background-color: #b91016;
 }
 
 .btn-container a span {
@@ -155,7 +161,7 @@ h4 {
 form.form-ctnr .btnn {
     border: none;
     outline: none;
-    padding: 12px 20px;
+    padding: 16px 20px;
 }
 
 
@@ -1249,6 +1255,31 @@ form.form-ctnr input,
     border: 1px solid var(--primary-color);
 }
 
+.contact-form textarea {
+    resize: none;
+}
+
+.input-mobile-nmbr {
+    position: relative;
+    width: 100%;
+}
+
+.input-mobile-nmbr input:focus {
+    padding-left: 60px;
+}
+
+.input-mobile-nmbr img {
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+/* .input-mobile-nmbr:focus-within img {
+    display: none;
+} */
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     text-align: center;
@@ -1535,6 +1566,10 @@ form.form-ctnr input,
     .product-section .ctnr {
         padding-inline: 20px 10px;
     }
+
+    .input-mobile-nmbr img {
+        width: 30px;
+    }
 }
 
 @media (max-width:767.98px) {
@@ -1671,12 +1706,12 @@ form.form-ctnr input,
     /* ________--contact-us ______________ */
     .shop-info h3,
     .contact-form h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .shop-info h2,
     .contact-form h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .sp-ads img {
@@ -1690,6 +1725,15 @@ form.form-ctnr input,
 
     form.form-ctnr {
         gap: 10px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        font-size: 0.7rem;
+    }
+
+    .input-mobile-nmbr input:focus {
+        padding-left: 50px;
     }
 }
 
@@ -1731,14 +1775,15 @@ form.form-ctnr input,
     }
 
     /* ++++++++++++++++++++++++++++++++explore section  =======================*/
-    /* .explore-section .accordion {
+    .explore-section .accordion {
         width: 100%;
         overflow: auto;
     }
 
     .explore-section .accordion-item {
         min-width: calc(100% + 80px);
-    } */
+    }
+
 
     .product-section .tables {
         min-width: calc(100% + 150px);
