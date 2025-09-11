@@ -679,7 +679,7 @@ button.accordion-button {
     display: flex;
     gap: 10px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
     color: var(--primary-color);
 }
