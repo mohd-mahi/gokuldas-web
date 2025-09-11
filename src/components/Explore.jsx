@@ -109,21 +109,17 @@ const Explore = () => {
                                 <td className="td">
                                   {row.url && (
                                     <a
-                                      href={
-                                        row.url.startsWith("http")
-                                          ? row.url
-                                          : `${row.url}`
-                                      }
+                                      href={row.url}
                                       data-fancybox={`img-${index}-${i}`}
                                       data-caption={row.name}
                                     >
                                       <img
-                                        src={
-                                          row.url.startsWith("http")
-                                            ? row.url
-                                            : `${row.url}`
-                                        }
+                                        src={row.url}
                                         alt={row.name}
+                                        style={{
+                                          cursor: "pointer",
+                                          maxWidth: "80px",
+                                        }}
                                       />
                                     </a>
                                   )}

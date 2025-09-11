@@ -78,22 +78,11 @@ const OurProduct = () => {
                       <td className="td">
                         {item.url && (
                           <a
-                            href={
-                              item.url.startsWith("http")
-                                ? item.url
-                                : `${item.url}`
-                            }
-                            data-fancybox={`img-${idx}`}
+                            href={item.url}
+                            data-fancybox={`img-${idx}-${idx}`}
                             data-caption={item.name}
                           >
-                            <img
-                              src={
-                                item.url.startsWith("http")
-                                  ? item.url
-                                  : `${item.url}`
-                              }
-                              alt={item.name}
-                            />
+                            <img src={item.url} alt={item.name} />{" "}
                           </a>
                         )}
                         <span>
