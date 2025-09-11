@@ -1572,6 +1572,25 @@ form.form-ctnr input,
     .input-mobile-nmbr img {
         width: 30px;
     }
+
+    .f-panzoom__viewport {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        transform: none !important;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .f-panzoom__content {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain;
+    }
 }
 
 @media (max-width:767.98px) {
