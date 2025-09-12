@@ -1261,13 +1261,15 @@ form.form-ctnr input,
     resize: none;
 }
 
+
+
 .input-mobile-nmbr {
     position: relative;
     width: 100%;
 }
 
 .input-mobile-nmbr input {
-    padding-left: 60px !important;
+    padding-left: 95px !important;
 }
 
 .input-mobile-nmbr img {
@@ -1319,6 +1321,7 @@ html.with-fancybox {
     max-width: 100% !important;
     object-fit: contain;
 }
+
 
 
 @media (max-width:1199.98px) {
