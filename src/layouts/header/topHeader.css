@@ -52,7 +52,8 @@
     will-change: transform, opacity;
     --slice: calc(var(--duration) / var(--count));
     animation: flipLeftRight var(--duration) linear infinite both;
-    animation-delay: calc(var(--i) * var(--slice));
+    /* animation-delay: calc(var(--i) * var(--slice)); */
+    animation-delay: calc(var(--i) * var(--slice) - var(--slice) * 0.5);
 }
 
 .ticker:hover .ticker__item {
@@ -61,7 +62,7 @@
 
 .ticker__item p {
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.9rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -78,7 +79,7 @@
     text-decoration: underline;
 }
 
-@keyframes flipLeftRight {
+/* @keyframes flipLeftRight {
     0% {
         opacity: 0;
         transform: rotateY(90deg) translateX(0);
@@ -103,8 +104,35 @@
     100% {
         opacity: 0;
     }
-}
+} */
 
+
+@keyframes flipLeftRight {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg) translateX(0);
+    }
+
+    5% {
+        opacity: 1;
+        transform: rotateY(0deg) translateX(0);
+    }
+
+    25% {
+        opacity: 1;
+        transform: rotateY(0deg) translateX(0);
+    }
+
+    30% {
+        opacity: 0;
+        transform: rotateY(-90deg) translateX(0);
+    }
+
+    31%,
+    100% {
+        opacity: 0;
+    }
+}
 
 @media (prefers-reduced-motion: reduce) {
     .ticker__item {

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./topHeader.css";
+import { Link } from "react-router";
 
 export default function NewsTicker() {
   const listRef = useRef(null);
@@ -22,14 +23,14 @@ export default function NewsTicker() {
       return (
         <>
           For Order{" "}
-          <a
-            href="https://wa.me/919029291221?text=Hello"
+          <Link
+            to="https://wa.me/919029291221?text=Hello"
             target="_blank"
             rel="noopener noreferrer"
           >
             WhatsApp
-          </a>{" "}
-          or Call{" "}
+          </Link>
+          or Call
           <a href="tel:+919029291221" rel="noopener noreferrer">
             +91 90292 91221
           </a>
@@ -39,9 +40,9 @@ export default function NewsTicker() {
       return (
         <>
           For India's Shipping Rates{" "}
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <Link to="#" target="_blank" rel="noopener noreferrer">
             Download Chart
-          </a>
+          </Link>
         </>
       );
     } else {
