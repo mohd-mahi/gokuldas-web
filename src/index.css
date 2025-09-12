@@ -1035,28 +1035,23 @@ ul.happy-icon {
     list-style: none;
 }
 
-.footer .social-icon-container li+li {
-    padding-left: 8px;
-}
-
 .footer .social-icon-container li a {
-    font-size: 0.9rem;
+    font-size: 1rem;
     width: 30px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #fff;
     transition: all 0.3s ease-in-out;
 
 }
 
 .footer .social-icon-container li a:hover {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+    /* border: 1px solid #fff; */
 }
 
 /* footer nav-link  */
@@ -1258,7 +1253,7 @@ form.form-ctnr input,
     transition: all 0.3s ease-in;
 }
 
-.invalid-feedback{
+.invalid-feedback {
     font-size: 0.8rem;
 }
 

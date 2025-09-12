@@ -40,8 +40,9 @@ const Header = () => {
             <ul className="nav-links d-none d-lg-flex">
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/" ? "active" : ""
+                  }`}
                   to="/"
                   onClick={() => setActive(!active)}
                 >
@@ -50,8 +51,9 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${location.pathname === "/about-us" ? "active" : ""
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === "/about-us" ? "active" : ""
+                  }`}
                   to="/about-us"
                   onClick={() => setActive(!active)}
                 >
@@ -62,8 +64,9 @@ const Header = () => {
               {/* Desktop Dropdown */}
               <li className="nav-item dropdown">
                 <button
-                  className={`nav-link dropdown-toggle ${location.pathname.startsWith("/products") ? "active" : ""
-                    }`}
+                  className={`nav-link dropdown-toggle ${
+                    location.pathname.startsWith("/products") ? "active" : ""
+                  }`}
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   OUR PRODUCTS
@@ -97,21 +100,18 @@ const Header = () => {
             </ul>
 
             {/* Logo */}
-            <a href="#" className="logo">
-              <img
-                src="/images/logo (2).png"
-                className="img-fluid"
-                alt="Logo"
-              />
-            </a>
+            <Link to="/" className="logo">
+              <img src="/images/logo.png" className="img-fluid" alt="Logo" />
+            </Link>
 
             {/* Mobile Menu */}
             <nav className={`navbar-links ${active ? "active" : ""}`}>
               <ul className="nav-links">
                 <li className="nav-item d-block d-lg-none">
                   <Link
-                    className={`nav-link ${location.pathname === "/" ? "active" : ""
-                      }`}
+                    className={`nav-link ${
+                      location.pathname === "/" ? "active" : ""
+                    }`}
                     to="/"
                     onClick={() => setActive(!active)}
                   >
@@ -120,8 +120,9 @@ const Header = () => {
                 </li>
                 <li className="nav-item d-block d-lg-none">
                   <Link
-                    className={`nav-link ${location.pathname === "/about-us" ? "active" : ""
-                      }`}
+                    className={`nav-link ${
+                      location.pathname === "/about-us" ? "active" : ""
+                    }`}
                     to="/about-us"
                     onClick={() => setActive(!active)}
                   >
@@ -132,8 +133,9 @@ const Header = () => {
                 {/* Mobile Dropdown */}
                 <li className="nav-item dropdown d-flex d-lg-none">
                   <button
-                    className={`nav-link dropdown-toggle ${location.pathname.startsWith("/products") ? "active" : ""
-                      }`}
+                    className={`nav-link dropdown-toggle ${
+                      location.pathname.startsWith("/products") ? "active" : ""
+                    }`}
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   >
                     OUR PRODUCTS
@@ -173,12 +175,24 @@ const Header = () => {
                   </Link>
                 </li> */}
                 <li className="nav-item">
-                  <Link className="nav-link" to="/review">
+                  <Link
+                    className={`nav-link ${
+                      location.pathname === "/review" ? "active" : ""
+                    }`}
+                    to="/review"
+                    onClick={() => setActive(!active)}
+                  >
                     REVIEWS
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/contact-us">
+                  <Link
+                    className={`nav-link ${
+                      location.pathname === "/contact-us" ? "active" : ""
+                    }`}
+                    to="/contact-us"
+                    onClick={() => setActive(!active)}
+                  >
                     CONTACT US
                   </Link>
                 </li>

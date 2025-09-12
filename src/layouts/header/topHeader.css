@@ -48,11 +48,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform-origin: 50% 100%;
     backface-visibility: hidden;
     will-change: transform, opacity;
     --slice: calc(var(--duration) / var(--count));
-    animation: flipUp var(--duration) linear infinite both;
+    animation: flipLeftRight var(--duration) linear infinite both;
     animation-delay: calc(var(--i) * var(--slice));
 }
 
@@ -62,7 +61,7 @@
 
 .ticker__item p {
     color: #fff;
-    font-size: 0.8rem;
+    font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -72,7 +71,6 @@
 .ticker__item a {
     color: var(--fg);
     text-decoration: none;
-    font-size: 0.8rem;
 
 }
 
@@ -80,25 +78,25 @@
     text-decoration: underline;
 }
 
-@keyframes flipUp {
+@keyframes flipLeftRight {
     0% {
         opacity: 0;
-        transform: rotateX(90deg) translateY(0);
+        transform: rotateY(90deg) translateX(0);
     }
 
     5% {
         opacity: 1;
-        transform: rotateX(0deg) translateY(0);
+        transform: rotateY(0deg) translateX(0);
     }
 
     15% {
         opacity: 1;
-        transform: rotateX(0deg) translateY(0);
+        transform: rotateY(0deg) translateX(0);
     }
 
     20% {
         opacity: 0;
-        transform: rotateX(-90deg) translateY(0);
+        transform: rotateY(-90deg) translateX(0);
     }
 
     21%,
@@ -106,6 +104,7 @@
         opacity: 0;
     }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
     .ticker__item {
@@ -117,9 +116,9 @@
     }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width:991.98px) {
     .ticker__viewport {
-        height: 1.2em;
+        height: 1.3em;
     }
 
     .ticker__item {
@@ -128,7 +127,7 @@
 
     .ticker__item a,
     .ticker__item p {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         text-align: center;
     }
 }
