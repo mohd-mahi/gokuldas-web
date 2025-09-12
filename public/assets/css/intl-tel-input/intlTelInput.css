@@ -146,6 +146,10 @@
   white-space: nowrap;
 }
 
+.input-mobile-nmbr input.iti__search-input{
+	padding-left:15px !important;
+}
+
 @media (max-width: 500px) {
   .iti--flexible-dropdown-width .iti__country-list {
     white-space: normal;

@@ -1268,9 +1268,9 @@ form.form-ctnr input,
     width: 100%;
 }
 
-.input-mobile-nmbr input {
+/* .input-mobile-nmbr input {
     padding-left: 95px !important;
-}
+} */
 
 .input-mobile-nmbr img {
     width: 40px;
