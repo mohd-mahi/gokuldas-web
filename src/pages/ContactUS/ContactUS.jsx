@@ -4,6 +4,7 @@ import Feature from "../../components/Feature";
 import { renderToStaticMarkup } from "react-dom/server";
 import { useToast } from "../../context/Toast/ToastContext";
 import { useFormLoader } from "../../context/FormLoader/FormLoaderContext";
+import { Link } from "react-router";
 
 const ContactUS = () => {
   const itiRef = useRef(null);
@@ -167,10 +168,10 @@ const ContactUS = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Smtp-Host": "mail.modern-developers.commm",
+            "Smtp-Host": "mail.gokuldasgathiawala.com",
             "Smtp-Port": 465,
-            "Smtp-User": "mailer@modern-developers.commm",
-            "Smtp-Password": "DpooZQ%vt,Ia",
+            "Smtp-User": "crm@gokuldasgathiawala.com",
+            "Smtp-Password": "#%[H[WoK;eDE",
           },
           body: JSON.stringify({
             fromName: mailerSetting.fromName,
@@ -253,13 +254,18 @@ const ContactUS = () => {
                     </div>
                     <div className="sp-ads">
                       <img src="/images/email.png" alt="store" />
-                      <a href="mailto:info@gokuldasgathiawala.com">
-                        info@gokuldasgathiawala.com
+                      <a href="mailto:info@gokuldasplus@hotmail.com ">
+                        gokuldasplus@hotmail.com
+                      </a>
+                      <a href="mailto:info@gokuldasplus@gmail.com ">
+                        gokuldasplus@gmail.com
                       </a>
                     </div>
                     <div className="sp-ads">
                       <img src="/images/call.png" alt="store" />
                       <a href="tel:+919029291221">(+91) 90292 91221</a>
+                      <a href="tel:+919867781113">(+91) 9867781113</a>
+                      <a href="tel:+918898296444">(+91) 8898296444</a>
                     </div>
                   </div>
                 </div>

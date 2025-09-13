@@ -2,7 +2,6 @@ import {
   faFacebookF,
   faInstagram,
   faTwitter,
-  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -11,28 +10,31 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className="footer section-padding less">
+      <a href="https://wa.me/919029291221?text=Hello" className="whatsapp-icon">
+        <img src="/images/whatsapp.png" alt="" />
+      </a>
       <div className="container">
         <ul className="social-icon-container">
           <li>
-            <Link to="?">
+            <Link to="https://www.facebook.com/gokuldasgathiawala">
               <FontAwesomeIcon icon={faFacebookF} />
             </Link>
           </li>
           <li>
-            <Link to="?">
+            <Link to="https://www.instagram.com/gokuldasgathiawala/">
               <FontAwesomeIcon icon={faInstagram} />
             </Link>
           </li>
           <li>
-            <Link to="?">
+            <Link to="https://x.com/gathiawala">
               <FontAwesomeIcon icon={faTwitter} />
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="?">
               <FontAwesomeIcon icon={faYoutube} />
             </Link>
-          </li>
+          </li> */}
         </ul>
         <ul className="footer-nav-link d-none">
           <li>
