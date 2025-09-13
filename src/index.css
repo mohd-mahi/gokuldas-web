@@ -127,6 +127,12 @@ h4 {
     margin-top: 80px;
 }
 
+.second-headings {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
 .btn-container .btnn {
     display: inline-block;
     background: var(--primary-color);
@@ -1561,6 +1567,7 @@ html.with-fancybox {
     .hamburger-menu-One.active {
         opacity: 0;
     }
+
 
     .hamburger-menu-three.active {
         transform: rotate(-45deg)translate(0px, -2px);
