@@ -771,6 +771,7 @@ button.accordion-button img {
     max-width: 40px;
     object-fit: contain;
     aspect-ratio: 1/1;
+    box-shadow: 1px 1px 1px 0px #ccc;
 }
 
 
