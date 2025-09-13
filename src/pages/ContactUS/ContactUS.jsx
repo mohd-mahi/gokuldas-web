@@ -60,9 +60,11 @@ const ContactUS = () => {
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errs.email = "Valid email address is required!";
     }
-    if (!/^[0-9]{10,15}$/.test(formData.phone)) {
-      errs.phone = "Valid phone number is required!";
-    }
+    // if (!/^[0-9]{10,15}$/.test(formData.phone)) {
+    //   errs.phone = "Valid phone number is required!";
+    // }
+    if (!itiRef.current?.isValidNumber())
+      errs.phone = "Valid phone number is required.";
     return errs;
   };
 
