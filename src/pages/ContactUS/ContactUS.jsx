@@ -78,7 +78,7 @@ const ContactUS = () => {
   const emailMethod = "php";
   const mailerSetting = {
     fromName: "Gokuldas Website",
-    sendTo: ["thecoderashok@gmail.com"],
+    sendTo: ["verligte@gmail.com"],
   };
 
   useEffect(() => {

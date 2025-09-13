@@ -405,12 +405,14 @@ ul.dropdown-menu.show>.dropdown-item.active {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
 }
 
 .loader-wrapper.active {
     opacity: 1;
     pointer-events: all;
     transition: opacity 0.2s ease;
+    -webkit-transition: opacity 0.2s ease;
 }
 
 .loader {
@@ -672,6 +674,7 @@ ul.dropdown-menu.show>.dropdown-item.active {
 .accordion-collapse {
     overflow: hidden;
     transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
 }
 
 button.accordion-button {
@@ -713,6 +716,7 @@ button.accordion-button::before {
     color: #bbb;
     opacity: 1;
     transition: opacity 0.3s ease-in;
+    -webkit-transition: opacity 0.3s ease-in;
 }
 
 .accordion-button:not(.collapsed)::before {
@@ -1091,6 +1095,7 @@ ul.happy-icon {
     color: #fff;
     background-color: var(--primary-color);
     transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
 
 }
 
@@ -1134,7 +1139,8 @@ ul.footer-nav-link a {
     line-height: 1;
     color: #fff;
     text-decoration: none;
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
 }
 
 ul.footer-nav-link a:hover {
@@ -1297,6 +1303,7 @@ form.form-ctnr input,
     font-weight: normal;
     border: 1px solid #b9b9b9;
     transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
 }
 
 .invalid-feedback {
@@ -1409,6 +1416,7 @@ html.with-fancybox {
         background: white;
         transform: translateX(100%);
         transition: all .3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        -webkit-transition: all .3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         z-index: 99;
 
     }
