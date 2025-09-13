@@ -23,13 +23,13 @@ export default function NewsTicker() {
       return (
         <>
           For Order{" "}
-          <Link
-            to="https://wa.me/919029291221?text=Hello"
+          <a
+            href="https://wa.me/919029291221?text=Hello"
             target="_blank"
             rel="noopener noreferrer"
           >
             WhatsApp
-          </Link>
+          </a>
           or Call
           <a href="tel:+919029291221" rel="noopener noreferrer">
             +91 90292 91221
@@ -40,9 +40,9 @@ export default function NewsTicker() {
       return (
         <>
           For India's Shipping Rates{" "}
-          <Link to="#" target="_blank" rel="noopener noreferrer">
+          <a to="#" target="_blank" rel="noopener noreferrer">
             Download Chart
-          </Link>
+          </a>
         </>
       );
     } else {

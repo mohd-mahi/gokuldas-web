@@ -10,7 +10,11 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className="footer section-padding less">
-      <a href="https://wa.me/919029291221?text=Hello" className="whatsapp-icon">
+      <a
+        target="blank"
+        href="https://wa.me/919029291221?text=Hello"
+        className="whatsapp-icon"
+      >
         <img src="/images/whatsapp.png" alt="" />
       </a>
       <div className="container">
