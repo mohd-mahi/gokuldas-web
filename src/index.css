@@ -1071,19 +1071,22 @@ ul.happy-icon {
     align-items: center;
     gap: 5px;
     text-decoration: none;
+    transform: translateX(81px);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+    transform: translateX(0);
 }
 
 .order-now {
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1.2;
-    display: none;
     transition: all 0.3s ease-in;
 }
 
-.whatsapp-icon:hover .order-now {
-    display: block;
-}
 
 .whatsapp-icon img {
     position: relative;

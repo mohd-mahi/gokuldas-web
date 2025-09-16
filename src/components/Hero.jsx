@@ -6,6 +6,12 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 const Hero = () => {
+  const banner = [
+    { url: "/images/hero.jpg" },
+    { url: "/images/hero-2.jpg" },
+    { url: "/images/hero.jpg" },
+    { url: "/images/hero-3.jpg" },
+  ];
   return (
     <section
       className="hero-section section-padding less"
@@ -31,18 +37,13 @@ const Hero = () => {
             }}
             className="mySwiper"
           >
-            <SwiperSlide>
-              <img src="/images/kachori.jpg" alt="" className="img-fluid" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/images/kachori.jpg" alt="" className="img-fluid" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/images/kachori.jpg" alt="" className="img-fluid" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/images/kachori.jpg" alt="" className="img-fluid" />
-            </SwiperSlide>
+            {banner.map((v, i) => (
+              <SwiperSlide key={i}>
+                <a href="https://wa.me/919029291221?text=Hello">
+                  <img src={v.url} alt="banner" className="img-fluid" />
+                </a>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
