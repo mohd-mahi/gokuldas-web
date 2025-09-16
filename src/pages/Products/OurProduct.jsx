@@ -95,9 +95,9 @@ const OurProduct = () => {
                 </tbody>
               </table>
               <div className="btn-container">
-                <Link to="?" className="btnn">
+                <a href="/file/speed-post-rate-chart.xls" className="btnn">
                   Download <span>Shipping Rates Card</span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

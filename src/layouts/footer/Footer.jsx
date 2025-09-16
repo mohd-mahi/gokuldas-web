@@ -11,14 +11,14 @@ const Footer = () => {
   return (
     <footer className="footer section-padding less">
       <div className="order-ctnr">
-        <a
+        <Link
           target="blank"
-          href="https://wa.me/919029291221?text=Hello"
+          to="https://wa.me/919029291221?text=Hello"
           className="whatsapp-icon"
         >
           <img src="/images/whatsapp.png" alt="" />
           <span className="order-now">Order Now!</span>
-        </a>
+        </Link>
       </div>
       <div className="container">
         <ul className="social-icon-container">

@@ -23,26 +23,26 @@ export default function NewsTicker() {
       return (
         <>
           For Order{" "}
-          <a
-            href="https://wa.me/919029291221?text=Hello"
+          <Link
+            to="https://wa.me/919029291221?text=Hello"
             target="_blank"
             rel="noopener noreferrer"
           >
             WhatsApp
-          </a>
+          </Link>
           or Call
-          <a href="tel:+919029291221" rel="noopener noreferrer">
+          <Link to="tel:+919029291221" rel="noopener noreferrer">
             +91 90292 91221
-          </a>
+          </Link>
         </>
       );
     } else if (text.includes("Download Chart")) {
       return (
         <>
           For India's Shipping Rates{" "}
-          <a to="#" target="_blank" rel="noopener noreferrer">
+          <Link to="#" target="_blank" rel="noopener noreferrer">
             Download Chart
-          </a>
+          </Link>
         </>
       );
     } else {

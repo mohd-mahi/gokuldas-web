@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router";
 
 const Hero = () => {
   const banner = [
@@ -39,9 +40,9 @@ const Hero = () => {
           >
             {banner.map((v, i) => (
               <SwiperSlide key={i}>
-                <a href="https://wa.me/919029291221?text=Hello">
+                <Link to="https://wa.me/919029291221?text=Hello" target="blank">
                   <img src={v.url} alt="banner" className="img-fluid" />
-                </a>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
