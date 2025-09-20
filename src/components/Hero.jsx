@@ -8,10 +8,10 @@ import { Link } from "react-router";
 
 const Hero = () => {
   const banner = [
-    { url: "/images/hero.jpg" },
-    { url: "/images/hero-2.jpg" },
-    { url: "/images/hero.jpg" },
-    { url: "/images/hero-3.jpg" },
+    { url: "/images/banner-1.jpg" },
+    { url: "/images/banner-2.jpg" },
+    { url: "/images/banner-3.jpg" },
+    { url: "/images/banner-4.jpg" },
   ];
   return (
     <section
